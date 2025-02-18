@@ -1,71 +1,80 @@
 # Doc Scraper MCP Server
 
-The Doc Scraper is an MCP server that converts web documentation into markdown format using Jina.ai's API.
+A Model Context Protocol (MCP) server that provides documentation scraping functionality. This server converts web-based documentation into markdown format using jina.ai's conversion service.
 
 ## Features
 
-- Converts web pages to clean markdown
-- Saves output to specified file path
-- Handles URL fetching and error cases
-
-## Usage
-
-The server provides a single tool:
-
-### scrape_docs
-
-Scrapes documentation from a URL and saves it as markdown.
-
-**Input Schema:**
-```json
-{
-  "url": "string",       // URL of the documentation to scrape
-  "output_path": "string" // Path to save the markdown file
-}
-```
-
-**Example Request:**
-```json
-{
-  "url": "https://example.com/docs",
-  "output_path": "docs/example.md"
-}
-```
-
-**Example Response:**
-```json
-{
-  "content": [
-    {
-      "type": "text",
-      "text": "Successfully scraped docs from https://example.com/docs and saved to docs/example.md"
-    }
-  ]
-}
-```
+- Scrapes documentation from any web URL
+- Converts HTML documentation to markdown format
+- Saves the converted documentation to a specified output path
+- Integrates with the Model Context Protocol (MCP)
 
 ## Installation
 
-1. Clone the repository
-2. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-3. Run the server:
-   ```bash
-   python -m doc_scraper
-   ```
+1. Clone the repository:
 
-## Configuration
+```bash
+git clone https://github.com/askjohngeorge/doc-scraper.git
+cd doc-scraper
+```
 
-The server requires no special configuration and can be used immediately after installation.
+2. Create and activate a virtual environment:
+
+```bash
+python -m venv venv
+source venv/bin/activate  # On Windows, use: venv\Scripts\activate
+```
+
+3. Install the dependencies:
+
+```bash
+pip install -e .
+```
+
+## Usage
+
+The server can be run using Python:
+
+```bash
+python -m doc_scraper
+```
+
+### Tool Description
+
+The server provides a single tool:
+
+- **Name**: `scrape_docs`
+- **Description**: Scrape documentation from a URL and save as markdown
+- **Input Parameters**:
+  - `url`: The URL of the documentation to scrape
+  - `output_path`: The path where the markdown file should be saved
+
+## Project Structure
+
+```
+doc_scraper/
+├── __init__.py
+├── __main__.py
+└── server.py
+```
 
 ## Dependencies
 
-- Python 3.7+
 - aiohttp
-- pydantic
 - mcp
+- pydantic
+
+## Development
+
+To set up the development environment:
+
+1. Install development dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+2. The server uses the Model Context Protocol. Make sure to familiarize yourself with [MCP documentation](https://modelcontextprotocol.io/).
 
 ## License
 
