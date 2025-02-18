@@ -1,4 +1,3 @@
-# __init__.py
 import asyncio
 import logging
 from .server import serve
