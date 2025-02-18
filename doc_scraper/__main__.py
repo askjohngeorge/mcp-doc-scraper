@@ -1,4 +1,4 @@
-from . import main
+from doc_scraper import serve
+import asyncio
 
-if __name__ == "__main__":
-    main()
+asyncio.run(serve())
