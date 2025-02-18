@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
+
 import asyncio
 import logging
 import os
-from pathlib import Path
-from typing import Any
 
 import aiohttp
+
 from mcp.server import Server
 from mcp.server.stdio import stdio_server
 from mcp.types import TextContent, Tool
@@ -35,10 +35,8 @@ async def serve() -> None:
     async def call_tool(name: str, arguments: dict) -> list[TextContent]:
         if name != "scrape_docs":
             raise ValueError(f"Unknown tool: {name}")
-
         url = arguments["url"]
         output_path = arguments["output_path"]
-
         try:
             # Use jina.ai to convert URL to markdown
             jina_url = f"https://r.jina.ai/{url}"
@@ -52,22 +50,19 @@ async def serve() -> None:
                             )
                         ]
                     content = await response.text()
-
             # Ensure output directory exists
             os.makedirs(os.path.dirname(output_path), exist_ok=True)
-
             # Save markdown content
             with open(output_path, "w", encoding="utf-8") as f:
                 f.write(content)
-
             return [
                 TextContent(
                     type="text",
                     text=f"Successfully scraped docs from {url} and saved to {output_path}",
                 )
             ]
-
         except Exception as e:
+            logger.exception("Error while scraping documentation.")  # Optionally log the error
             return [TextContent(type="text", text=f"Error: {str(e)}")]
 
     options = server.create_initialization_options()
