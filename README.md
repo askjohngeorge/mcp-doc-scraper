@@ -14,8 +14,8 @@ A Model Context Protocol (MCP) server that provides documentation scraping funct
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/askjohngeorge/doc-scraper.git
-cd doc-scraper
+git clone https://github.com/askjohngeorge/mcp-doc-scraper.git
+cd mcp-doc-scraper
 ```
 
 2. Create and activate a virtual environment:
@@ -36,7 +36,7 @@ pip install -e .
 The server can be run using Python:
 
 ```bash
-python -m doc_scraper
+python -m mcp_doc_scraper
 ```
 
 ### Tool Description

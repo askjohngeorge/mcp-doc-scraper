@@ -3,16 +3,12 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "doc_scraper"
+name = "mcp_doc_scraper"
 version = "0.1.0"
 authors = []
 description = "MCP server for scraping documentation"
 requires-python = ">=3.7"
-dependencies = [
-    "aiohttp",
-    "mcp",
-    "pydantic"
-]
+dependencies = ["aiohttp", "mcp", "pydantic"]
 
 [tool.setuptools]
-packages = ["doc_scraper"]
+packages = ["mcp_doc_scraper"]
