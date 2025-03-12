@@ -1,4 +1,5 @@
 # Doc Scraper MCP Server
+[![smithery badge](https://smithery.ai/badge/@askjohngeorge/mcp-doc-scraper)](https://smithery.ai/server/@askjohngeorge/mcp-doc-scraper)
 
 A Model Context Protocol (MCP) server that provides documentation scraping functionality. This server converts web-based documentation into markdown format using jina.ai's conversion service.
 
@@ -10,6 +11,14 @@ A Model Context Protocol (MCP) server that provides documentation scraping funct
 - Integrates with the Model Context Protocol (MCP)
 
 ## Installation
+
+### Installing via Smithery
+
+To install Doc Scraper for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@askjohngeorge/mcp-doc-scraper):
+
+```bash
+npx -y @smithery/cli install @askjohngeorge/mcp-doc-scraper --client claude
+```
 
 1. Clone the repository:
 
