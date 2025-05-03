@@ -1,3 +1,5 @@
+[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/askjohngeorge-mcp-doc-scraper-badge.png)](https://mseep.ai/app/askjohngeorge-mcp-doc-scraper)
+
 # Doc Scraper MCP Server
 [![smithery badge](https://smithery.ai/badge/@askjohngeorge/mcp-doc-scraper)](https://smithery.ai/server/@askjohngeorge/mcp-doc-scraper)
 
